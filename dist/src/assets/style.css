@@ -1,0 +1,121 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+  --darkViolet: hsl(256, 26%, 20%);
+  --grayishBlue: hsl(216, 30%, 68%);
+
+  /* Neutral */
+
+  --veryDarkViolet: hsl(270, 9%, 17%);
+  --darkGrayishViolet: hsl(273, 4%, 51%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  /* fonts */
+  --heading: "DM Serif Display", serif;
+  --karla: "Karla", sans-serif;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 20rem auto 20rem;
+  grid-template-rows: 6rem 96rem 27rem 27rem;
+}
+/*------------------
+         Header styles ------------*/
+.header {
+  border: 1px solid red;
+  display: grid;
+  grid-area: 1/2/2/3;
+  grid-template-columns: auto auto;
+}
+.title {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+}
+.nav {
+  width: 100%;
+  float: right;
+  padding: 0;
+  list-style: none;
+}
+.nav button {
+  float: right;
+  border: none;
+  font-family: var(--karla);
+  text-transform: uppercase;
+}
+.nav button a {
+  display: block;
+  padding: 8px 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: uppercase;
+}
+.nav button a:hover {
+  color: white;
+  background-color: black;
+}
+/*------------------
+         Content styles ------------*/
+.content {
+  justify-content: center;
+  grid-area: 2/2/3/3;
+  display: grid;
+  grid-template-rows: 38rem 19rem 39rem;
+  grid-template-areas:
+    "firstCol secondCol secondCol thirdCol"
+    "sr sr sr sr"
+    "tr tr tr tr";
+  font-family: var(--heading);
+}
+.content1 {
+  display: grid;
+  grid-template-columns: 44rem 17rem 17rem 10rem;
+  border: 1px dashed salmon;
+  background: var(--veryDarkViolet);
+  position: relative;
+}
+.heading {
+  font-family: var(--heading);
+  font-size: min(max(1rem, 4vw), 4.5rem);
+}
+.firstCol {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  color: aliceblue;
+  background: url("./images/bg-pattern-intro-left-desktop.svg") bottom;
+  padding-left: 9rem;
+  padding-top: 8rem;
+}
+.para {
+  font-family: var(--heading);
+}
+.viewPlans {
+  padding: 0.6rem 1.2rem;
+  font-family: var(--heading);
+  text-transform: uppercase;
+}
+.secondCol {
+  display: grid;
+  grid-row: 1/2;
+  grid-column: 2 / 4;
+  background: url("./images/image-intro-desktop.jpg");
+  /* max-width: 100%; */
+  position: inherit;
+  top: 4rem;
+}
+.thirdCol {
+  display: grid;
+  grid-row: 1/2;
+  grid-column: 3 / 5;
+  background: url("./images/bg-pattern-intro-right-desktop.svg");
+  z-index: 2;
+}
+.content2 {
+  display: grid;
+  grid-area: sr;
+}
+.content3 {
+  display: grid;
+  grid-area: tr;
+}
