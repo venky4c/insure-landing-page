@@ -1,0 +1,299 @@
+$colors: (
+  /* Primary */ --darkViolet: hsl(256, 26%, 20%),
+  --grayishBlue: hsl(216, 30%, 68%),
+  /* Neutral */ --veryDarkViolet: hsl(270, 9%, 17%),
+  --darkGrayishViolet: hsl(273, 4%, 51%),
+  --veryLightGray: hsl(0, 0%, 88%)
+);
+
+$fonts: (
+  --heading: "DM Serif Display",
+  --karla: "Karla",
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@function font($font-name) {
+  @return map-get($fonts, $font-name);
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+.wrapper {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto; //auto; // auto;
+
+  @include desktop {
+    grid-template-areas: ". header ." ". content ." ". footer .";
+    //grid-template-columns: 15rem auto 15rem;
+    padding: 0 15rem;
+    /* grid-template-columns: 15rem auto 15rem;
+    grid-template-rows: 6rem 97rem 12rem; */
+  }
+
+  // --------------- header styles --------------------------
+  .header {
+    display: grid;
+    grid-area: header;
+    grid-template-rows: auto auto; // auto;
+
+    @include desktop {
+      grid-area: header;
+    }
+
+    nav {
+      div {
+        button {
+          justify-content: end;
+        }
+
+        div {
+          ul {
+            list-style: none;
+
+            li a {
+              display: block;
+              float: left;
+              border: var(--veryLightGray);
+              color: var(--darkGrayishViolet);
+              font-family: var(--karla);
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 0.125rem;
+            }
+
+            li a:hover {
+              border: 1px solid black;
+            }
+          } // end of ul
+        } // end of inner div
+      } //end of div
+    } //end of nav
+  } //end of header
+  //--------------------------  Header style ends -------------------
+  //--------------------------  Content Styles ----------------------
+  .content {
+    //justify-content: center;
+    grid-area: content;
+    //display: grid;
+    font-family: var(--karla);
+
+    // @include desktop {
+
+    // }
+
+    .content1 {
+      div {
+        // container
+        //display: grid;
+        // flex-direction: column;
+        //grid-template-rows: auto auto auto auto;
+        //place-content: center;
+        background: black;
+        color: white;
+
+        @include desktop {
+          //justify-content: start;
+        }
+
+        img {
+          max-width: 100%;
+
+          @include desktop {
+            position: relative;
+            top: 8rem;
+          }
+        }
+        header {
+          font-family: var(--heading);
+          font-size: min(max(1em, 2.5em), 2.5em);
+          font-weight: bold;
+          padding-top: 4em;
+        }
+        p {
+          font-family: var(--heading);
+          margin-top: 2em;
+        }
+        button {
+          font-family: var(--karla);
+          letter-spacing: 0.1em;
+          font-weight: bold;
+          text-transform: uppercase;
+          background: inherit;
+          color: inherit;
+          margin-top: 2em;
+          margin-bottom: 2em;
+        }
+      } //end of container
+    } // end of content1
+    // ----------------------- content2 styles begin -----------------
+
+    .content2 {
+      div > div > div {
+        display: grid;
+        justify-items: center;
+
+        @include desktop {
+          justify-items: start;
+        }
+
+        h1 {
+          font-family: var(--heading);
+          font-size: min(max(1em, 4em), 4.5em);
+          margin-top: 5em;
+          justify-content: center;
+        }
+      } //end of row
+    } // end of content2
+
+    // ---------------- content3 styles begin --------------
+    .content3 {
+      div > div {
+        display: grid;
+        justify-content: center;
+        background: black;
+
+        //url("../assets/images/bg-pattern-how-we-work-mobile.svg");
+        @include desktop {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        h3 {
+          color: white;
+          font-family: var(--karla);
+          font-size: min(max(1em, 3em), 3em);
+          border: 1px solid transparent;
+          justify-content: center;
+          margin: 2em 0;
+
+          @include desktop {
+            margin-left: min(max(0.5em, 1.5em), 1.5em);
+          }
+        }
+        button {
+          background: inherit;
+          border: 1px solid color(--veryLightGray);
+          text-transform: uppercase;
+          color: color(--veryLightGray);
+          font-family: var(--karla);
+          margin-bottom: 2em;
+          font-weight: bold;
+          letter-spacing: 0.2em;
+          padding: 0.9em 3em;
+        }
+      }
+    }
+  } // end of content
+
+  // footer style begin
+  //   .footer {
+  //     grid-area: footer;
+  //     display: grid;
+  //     grid-template-rows: auto auto;
+  //     background: url("../assets/images/bg-pattern-footer-mobile.svg");
+
+  //     @include desktop {
+  //       background: url("../assets//images/bg-pattern-footer-desktop.svg");
+  //     }
+
+  //     .footer-row1 {
+  //       display: grid;
+  //       grid-template-rows: auto auto auto;
+
+  //       @include desktop {
+  //         display: grid;
+  //         grid-template-columns: auto;
+  //         grid-template-rows: auto auto;
+  //       }
+
+  //       .logo-item {
+  //         //logo-item
+  //         display: grid;
+  //         grid-row: 1/2;
+  //         justify-content: center;
+
+  //         @include desktop {
+  //           grid-row: 1/2;
+  //           justify-content: start;
+  //         }
+  //       }
+
+  //       div {
+  //         //social-icons
+  //         display: flex;
+  //         justify-content: center;
+  //         grid-row: 2/3;
+  //         padding: 0.3rem auto;
+
+  //         @include desktop {
+  //           grid-row: 1/2;
+  //           justify-content: flex-end;
+  //           padding-right: 2rem;
+  //         }
+
+  //         img {
+  //           margin: 0.5rem;
+  //         }
+  //       }
+  //       hr {
+  //         color: color(--darkGrayishViolet);
+  //         grid-row: 3/4;
+
+  //         @include desktop {
+  //           grid-row: 2/3;
+  //         }
+  //       }
+  //     } // end of .footer-row1
+
+  //     .footer-row2 {
+  //       display: grid;
+  //       grid-template-areas: "our" "help" "contact" "others";
+
+  //       @include desktop {
+  //         grid-template-areas: "our help contact others";
+  //       }
+
+  //       div {
+  //         //our-company level
+  //         display: grid;
+  //         grid-template-rows: auto auto auto auto auto;
+  //         text-transform: uppercase;
+  //         font-family: font(--karla);
+  //         font-weight: bold;
+  //         line-height: 2.5em;
+  //         letter-spacing: 0.1em;
+  //         text-align: center;
+
+  //         @include desktop {
+  //           text-align: start;
+  //         }
+  //         span {
+  //           color: color(--darkGrayishViolet);
+  //           display: flex;
+  //           justify-content: center;
+  //           padding-left: 2.5em;
+  //           padding-top: 1.3em;
+
+  //           @include desktop {
+  //             justify-content: start;
+  //           }
+  //         }
+
+  //         ul {
+  //           list-style: none;
+  //           //text-align: center;
+  //         }
+  //       } //end of our-company level
+  //     } // end of footer-row2
+  //   } //end of footer
+} //end of wrapper

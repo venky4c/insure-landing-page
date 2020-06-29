@@ -1,0 +1,173 @@
+.wrapper {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+@media (min-width: 840px) {
+  .wrapper {
+        grid-template-areas: ". header ." ". content ." ". footer .";
+    padding: 0 15rem;
+    /* grid-template-columns: 15rem auto 15rem;
+    grid-template-rows: 6rem 97rem 12rem; */
+  }
+}
+
+.wrapper .header {
+  display: -ms-grid;
+  display: grid;
+  grid-area: header;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+@media (min-width: 840px) {
+  .wrapper .header {
+    grid-area: header;
+  }
+}
+
+.wrapper .header nav div button {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.wrapper .header nav div div ul {
+  list-style: none;
+}
+
+.wrapper .header nav div div ul li a {
+  display: block;
+  float: left;
+  border: var(--veryLightGray);
+  color: var(--darkGrayishViolet);
+  font-family: var(--karla);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+.wrapper .header nav div div ul li a:hover {
+  border: 1px solid black;
+}
+
+.wrapper .content {
+  grid-area: content;
+  font-family: var(--karla);
+}
+
+.wrapper .content .content1 div {
+  background: black;
+  color: white;
+}
+
+.wrapper .content .content1 div img {
+  max-width: 100%;
+}
+
+@media (min-width: 840px) {
+  .wrapper .content .content1 div img {
+    position: relative;
+    top: 8rem;
+  }
+}
+
+.wrapper .content .content1 div header {
+  font-family: var(--heading);
+  font-size: 2.5em;
+  font-weight: bold;
+  padding-top: 4em;
+}
+
+.wrapper .content .content1 div p {
+  font-family: var(--heading);
+  margin-top: 2em;
+}
+
+.wrapper .content .content1 div button {
+  font-family: var(--karla);
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: inherit;
+  color: inherit;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.wrapper .content .content2 div > div > div {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+@media (min-width: 840px) {
+  .wrapper .content .content2 div > div > div {
+    justify-items: start;
+  }
+}
+
+.wrapper .content .content2 div > div > div h1 {
+  font-family: var(--heading);
+  font-size: 4em;
+  margin-top: 5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .content .content3 div > div {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: black;
+}
+
+@media (min-width: 840px) {
+  .wrapper .content .content3 div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.wrapper .content .content3 div > div h3 {
+  color: white;
+  font-family: var(--karla);
+  font-size: 3em;
+  border: 1px solid transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2em 0;
+}
+
+@media (min-width: 840px) {
+  .wrapper .content .content3 div > div h3 {
+    margin-left: 1.5em;
+  }
+}
+
+.wrapper .content .content3 div > div button {
+  background: inherit;
+  border: 1px solid #e0e0e0;
+  text-transform: uppercase;
+  color: #e0e0e0;
+  font-family: var(--karla);
+  margin-bottom: 2em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  padding: 0.9em 3em;
+}
+/*# sourceMappingURL=main.css.map */
