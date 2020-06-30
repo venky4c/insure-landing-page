@@ -6,9 +6,9 @@ function Content() {
       <section className="content1">
         <div className="container">
           <div className="row" id="bg">
-            <div className="col-md-1"></div>
-            <div className="col-md-5" id="part1">
-              <hr className="ruler" size="1" width="15%" />
+            <div className="col-sm-1"></div>
+            <div className="col-sm-5" id="part1">
+              {/* <hr className="ruler" size="1" width="15%" /> */}
               <header className="heading">Humanizing your insurance.</header>
               <p className="para">
                 Get your life insurance coverage easier and faster. We blend our
@@ -17,7 +17,7 @@ function Content() {
               </p>
               <button className="viewPlans">View Plans</button>
             </div>
-            <div className="col-md-6 order-first order-md-last">
+            <div className="col-sm-6 order-first order-md-last">
               <img
                 src={require("../assets/images/image-intro-mobile.jpg")}
                 alt=""
