@@ -3,21 +3,17 @@ import React from "react";
 function Footer() {
   return (
     <div className="footer">
-      {/* */}
-      <div className="footer-row1">
-        <div className="logo-item">
+      <div className="row" id="footer-row2">
+        <div className="col-sm-6" id="logo-item">
           <img src={require("../assets/images/logo.svg")} alt="" />
         </div>
-        <div className="social-icons">
+        <div className="col-sm-6" id="social-icons">
           <img src={require("../assets/images/icon-facebook.svg")} alt="" />
           <img src={require("../assets/images/icon-twitter.svg")} alt="" />
           <img src={require("../assets/images/icon-pinterest.svg")} alt="" />
           <img src={require("../assets/images/icon-instagram.svg")} alt="" />
         </div>
-        <hr size="1" width="80%" />
-      </div>
-      <div className="footer-row2">
-        <div className="our-company">
+        <div className="col-sm" id="our-company">
           <span>Our Company</span>
           <ul className="our-company-links">
             <li>How we work</li>
@@ -26,7 +22,7 @@ function Footer() {
             <li>Reviews</li>
           </ul>
         </div>
-        <div className="help-me">
+        <div className="col-sm" id="help-me">
           <span>Help me</span>
           <ul className="help-me-links">
             <li>FAQ</li>
@@ -35,7 +31,7 @@ function Footer() {
             <li>Cookies</li>
           </ul>
         </div>
-        <div className="contact">
+        <div className="col-sm" id="contact">
           <span>Contact</span>
           <ul className="contact-links">
             <li>Sales</li>
@@ -43,7 +39,7 @@ function Footer() {
             <li>Live Chat</li>
           </ul>
         </div>
-        <div className="others">
+        <div className="col-sm" id="others">
           <span>Others</span>
           <ul className="others-links">
             <li>Careers</li>

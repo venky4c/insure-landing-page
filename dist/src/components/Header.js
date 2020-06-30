@@ -21,7 +21,7 @@ function Header() {
           <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav nav nav-fill w-100">
               <li class="nav-item">
-                <a class="nav-link active" href="#howWeWork">
+                <a class="nav-link" href="#howWeWork">
                   How We Work
                 </a>
               </li>

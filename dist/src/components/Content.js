@@ -5,8 +5,10 @@ function Content() {
     <div className="content">
       <section className="content1">
         <div className="container">
-          <div className="row">
-            <div className="col-md-6">
+          <div className="row" id="bg">
+            <div className="col-md-1"></div>
+            <div className="col-md-5" id="part1">
+              <hr className="ruler" size="1" width="15%" />
               <header className="heading">Humanizing your insurance.</header>
               <p className="para">
                 Get your life insurance coverage easier and faster. We blend our
@@ -24,13 +26,16 @@ function Content() {
           </div>
         </div>
       </section>
-      <section className="content2">
+      <section id="viewPlans" className="content2">
         <div className="container">
           <div className="row">
             <div className="col-12">
+              <hr className="ruler" size="1" width="15%" />
+            </div>
+            <div className="col-12">
               <h1 className="heading2">We're different</h1>
             </div>
-            <div class="w-100"></div>
+
             <div className="col-sm" id="snappy">
               <img
                 className="snappy-image"
@@ -49,7 +54,6 @@ function Content() {
                 src={require("../assets/images/icon-affordable-prices.svg")}
                 alt=""
               />
-
               <h3 className="affordable-title">Affordable Prices</h3>
               <p className="affordable-para">
                 We don’t want you worrying about high monthly costs. Our prices
@@ -68,21 +72,19 @@ function Content() {
                 payouts. We make sure you’re covered when you need it.
               </p>
             </div>
-          </div>{" "}
-          {/* end of row */}
-        </div>{" "}
-        {/* // end of container */}
+          </div>
+        </div>
       </section>
-      <section className="content3">
+      <section className="content3" id="howWeWork">
         <div className="row">
           <div className="col-sm">
             <h3>Find out more about how we work</h3>
           </div>
+
           <div className="col-sm">
             <button>How we work</button>
           </div>
         </div>
-
         <div className="work-logo"></div>
         <div className="work-socials"></div>
       </section>
@@ -91,7 +93,3 @@ function Content() {
 }
 
 export default Content;
-
-{
-  /* <hr className="ruler" size="1" width="30%" /> */
-}

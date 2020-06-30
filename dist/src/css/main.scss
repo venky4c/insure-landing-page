@@ -27,31 +27,33 @@ $desktop: 840px;
   }
 }
 
+// @media (min-width: 840px) {
+//   body #bg {
+//     clip-path: polygon(0 56%, 0% 100%, 46% 100%);
+//   }
+// }
+
 .wrapper {
   margin: 0;
-  display: grid;
-  grid-template-rows: auto; //auto; // auto;
 
   @include desktop {
-    grid-template-areas: ". header ." ". content ." ". footer .";
-    //grid-template-columns: 15rem auto 15rem;
-    padding: 0 15rem;
-    /* grid-template-columns: 15rem auto 15rem;
-    grid-template-rows: 6rem 97rem 12rem; */
+    margin: 0 30rem;
   }
 
   // --------------- header styles --------------------------
   .header {
-    display: grid;
-    grid-area: header;
-    grid-template-rows: auto auto; // auto;
-
     @include desktop {
-      grid-area: header;
     }
 
     nav {
       div {
+        img {
+          @include desktop {
+            margin-right: 20em;
+            margin-left: 7em;
+          }
+        }
+
         button {
           justify-content: end;
         }
@@ -74,52 +76,48 @@ $desktop: 840px;
             li a:hover {
               border: 1px solid black;
             }
-          } // end of ul
-        } // end of inner div
-      } //end of div
-    } //end of nav
-  } //end of header
+          }
+        }
+      }
+    }
+  }
   //--------------------------  Header style ends -------------------
+
   //--------------------------  Content Styles ----------------------
   .content {
-    //justify-content: center;
-    grid-area: content;
-    //display: grid;
     font-family: var(--karla);
-
-    // @include desktop {
-
-    // }
 
     .content1 {
       div {
-        // container
-        //display: grid;
-        // flex-direction: column;
-        //grid-template-rows: auto auto auto auto;
-        //place-content: center;
         background: black;
         color: white;
-
-        @include desktop {
-          //justify-content: start;
-        }
 
         img {
           max-width: 100%;
 
           @include desktop {
             position: relative;
-            top: 8rem;
+            top: 11rem;
           }
         }
         header {
           font-family: var(--heading);
-          font-size: min(max(1em, 2.5em), 2.5em);
+          font-size: min(max(1em, 2.8em), 2.8em);
           font-weight: bold;
           padding-top: 4em;
+          text-align: center;
+
+          @include desktop {
+            text-align: left;
+          }
+        }
+        hr {
+          @include desktop {
+            border: 1px solid white;
+          }
         }
         p {
+          text-align: center;
           font-family: var(--heading);
           margin-top: 2em;
         }
@@ -130,27 +128,57 @@ $desktop: 840px;
           text-transform: uppercase;
           background: inherit;
           color: inherit;
-          margin-top: 2em;
-          margin-bottom: 2em;
+          margin: 2em auto;
+          display: flex;
+
+          @include desktop {
+            display: initial;
+          }
         }
-      } //end of container
-    } // end of content1
+      }
+    }
     // ----------------------- content2 styles begin -----------------
 
     .content2 {
       div > div > div {
         display: grid;
         justify-items: center;
+        margin: 1em 0;
 
         @include desktop {
           justify-items: start;
+          margin: 1em 0;
         }
-
+        hr {
+          @include desktop {
+            display: flex;
+            align-items: flex-start;
+            margin: 0;
+            margin-top: 5em;
+          }
+        }
         h1 {
+          display: grid;
           font-family: var(--heading);
-          font-size: min(max(1em, 4em), 4.5em);
-          margin-top: 5em;
+          font-size: min(max(1rem, 3rem), 4rem);
           justify-content: center;
+
+          @include desktop {
+            //margin-bottom: 1em;
+          }
+        }
+        h3 {
+          @include desktop {
+            font-weight: bold;
+            font-size: min(max(1rem, 1.4rem), 1.4rem);
+            margin-top: 1em;
+            margin-bottom: 2em;
+          }
+        }
+        p {
+          @include desktop {
+            color: color(--darkGrayishViolet);
+          }
         }
       } //end of row
     } // end of content2
@@ -166,18 +194,24 @@ $desktop: 840px;
         @include desktop {
           display: flex;
           align-items: center;
-          justify-content: center;
+          //justify-content: space-between;
         }
         h3 {
           color: white;
           font-family: var(--karla);
-          font-size: min(max(1em, 3em), 3em);
+          font-size: min(max(1rem, 2.8rem), 2.8rem);
           border: 1px solid transparent;
-          justify-content: center;
+          display: grid;
+          text-align: center;
           margin: 2em 0;
 
           @include desktop {
+            display: grid;
+            justify-content: left;
+            margin-top: min(max(0.5em, 2em), 2.5em);
+            margin-bottom: min(max(0.5em, 2em), 2.5em);
             margin-left: min(max(0.5em, 1.5em), 1.5em);
+            margin-right: 1.5em;
           }
         }
         button {
@@ -189,111 +223,64 @@ $desktop: 840px;
           margin-bottom: 2em;
           font-weight: bold;
           letter-spacing: 0.2em;
-          padding: 0.9em 3em;
+          padding: 0.7em 2em;
+          justify-content: right;
         }
       }
     }
   } // end of content
 
   // footer style begin
-  //   .footer {
-  //     grid-area: footer;
-  //     display: grid;
-  //     grid-template-rows: auto auto;
-  //     background: url("../assets/images/bg-pattern-footer-mobile.svg");
+  .footer {
+    background: url("../assets/images/bg-pattern-footer-mobile.svg");
 
-  //     @include desktop {
-  //       background: url("../assets//images/bg-pattern-footer-desktop.svg");
-  //     }
+    @include desktop {
+      background: url("../assets//images/bg-pattern-footer-desktop.svg");
+    }
 
-  //     .footer-row1 {
-  //       display: grid;
-  //       grid-template-rows: auto auto auto;
+    #footer-row2 {
+      #logo-item {
+        margin: 2rem 0;
+        @include desktop {
+          display: flex;
+          justify-content: start;
+        }
+      }
+      #social-icons {
+        margin: 2rem 0;
 
-  //       @include desktop {
-  //         display: grid;
-  //         grid-template-columns: auto;
-  //         grid-template-rows: auto auto;
-  //       }
+        @include desktop {
+          display: flex;
+          justify-content: end;
+        }
+      }
+      div {
+        text-transform: uppercase;
+        font-family: font(--karla);
+        font-weight: bold;
+        line-height: 2.5em;
+        letter-spacing: 0.1em;
+        text-align: center;
 
-  //       .logo-item {
-  //         //logo-item
-  //         display: grid;
-  //         grid-row: 1/2;
-  //         justify-content: center;
+        @include desktop {
+          text-align: start;
+        }
+        span {
+          color: color(--darkGrayishViolet);
+          display: flex;
+          justify-content: center;
+          padding-left: 2.5em;
+          padding-top: 1.3em;
 
-  //         @include desktop {
-  //           grid-row: 1/2;
-  //           justify-content: start;
-  //         }
-  //       }
+          @include desktop {
+            justify-content: start;
+          }
+        }
 
-  //       div {
-  //         //social-icons
-  //         display: flex;
-  //         justify-content: center;
-  //         grid-row: 2/3;
-  //         padding: 0.3rem auto;
-
-  //         @include desktop {
-  //           grid-row: 1/2;
-  //           justify-content: flex-end;
-  //           padding-right: 2rem;
-  //         }
-
-  //         img {
-  //           margin: 0.5rem;
-  //         }
-  //       }
-  //       hr {
-  //         color: color(--darkGrayishViolet);
-  //         grid-row: 3/4;
-
-  //         @include desktop {
-  //           grid-row: 2/3;
-  //         }
-  //       }
-  //     } // end of .footer-row1
-
-  //     .footer-row2 {
-  //       display: grid;
-  //       grid-template-areas: "our" "help" "contact" "others";
-
-  //       @include desktop {
-  //         grid-template-areas: "our help contact others";
-  //       }
-
-  //       div {
-  //         //our-company level
-  //         display: grid;
-  //         grid-template-rows: auto auto auto auto auto;
-  //         text-transform: uppercase;
-  //         font-family: font(--karla);
-  //         font-weight: bold;
-  //         line-height: 2.5em;
-  //         letter-spacing: 0.1em;
-  //         text-align: center;
-
-  //         @include desktop {
-  //           text-align: start;
-  //         }
-  //         span {
-  //           color: color(--darkGrayishViolet);
-  //           display: flex;
-  //           justify-content: center;
-  //           padding-left: 2.5em;
-  //           padding-top: 1.3em;
-
-  //           @include desktop {
-  //             justify-content: start;
-  //           }
-  //         }
-
-  //         ul {
-  //           list-style: none;
-  //           //text-align: center;
-  //         }
-  //       } //end of our-company level
-  //     } // end of footer-row2
-  //   } //end of footer
-} //end of wrapper
+        ul {
+          list-style: none;
+        }
+      }
+    }
+  }
+}
